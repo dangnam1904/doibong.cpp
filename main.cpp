@@ -1,6 +1,7 @@
 #include<iostream>
 #include "doibong.cpp"
 #include "trandau.cpp"
+#include <iomanip>
 using namespace std;
 
 void menu(cauthu *ct[], int n, doibong *db[], int m, trandau *td[],int k)
@@ -49,7 +50,7 @@ void menu(cauthu *ct[], int n, doibong *db[], int m, trandau *td[],int k)
                 }
                 else if( choice_1==2){
                   cout<<"\n-------------------------Danh sach cau thu---------------\n";
-                  cout<<"\n Ho ten \t Ngay sinh \t CMND \t\t Quoc tich \t\t Vi tri dau: \t Chieu cao \t Can nang"<<endl;
+                  cout<<setw(30)<<left<<"Ho ten"<<setw(30)<<left<<"Ngay sinh"<<setw(30)<<left<<"CMND"<<setw(30)<<left<<"Quoc tich" <<setw(15)<<left<<"Vi tri dau"<<setw(15)<<left<<"Chieu cao "<<setw(10)<<left<<"Can nang"<<endl;
                     for(int i=0; i<n; i++){
                     
                       ct[i]->output();
@@ -177,8 +178,8 @@ void menu(cauthu *ct[], int n, doibong *db[], int m, trandau *td[],int k)
                 }
                 else if( choice_1==2){
                   cout<<"\n-------------------------Danh sach doi bong---------------\n";
-                  cout<<"Ten doi\t Dia phuong \t huan luyen vien\n"; 
-                    for(int i=0; i<n; i++){
+                  cout<<setw(30)<<left<<"Ten doi"<<setw(30)<<left<<" Dia phuong "<<setw(30)<<left <<"Huan luyen vien"<<"\n"; 
+                    for(int i=0; i<m; i++){
                     
                       db[i]->output();
                     }

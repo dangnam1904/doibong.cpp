@@ -1,6 +1,7 @@
 #include<iostream>
 #include <string>
 #include<fstream>
+#include <iomanip>
 using namespace std;
 class cauthu{
     // khai báo thuộc tính của lớp
@@ -47,7 +48,7 @@ class cauthu{
         void output(){
            
             
-            cout<< hoten<<"\t "<<ngaysinh<<"\t"<<cmnd<<"\t\t"<<quoctich<<"\t\t"<<vtri_dau<<"\t "<<chieucao<<"\t "<<cannang<<"\n";
+            cout<<setw(30)<<left<< hoten<<setw(30)<<left<<ngaysinh<<setw(30)<<left<<cmnd<<setw(30)<<left<<quoctich<<setw(15)<<left<<vtri_dau<<setw(15)<<left<<chieucao<<setw(10)<<left<<cannang<<"\n";
 
         }
       // hàm bạn  

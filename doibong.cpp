@@ -1,9 +1,10 @@
 #include<iostream>
 #include "cauthu.cpp"
 #include<vector>
+#include <iomanip>
 using namespace std;
 
-class doibong{
+class doibong:public cauthu{
 
     
     public: 
@@ -34,23 +35,24 @@ class doibong{
                     fflush(stdin);
                     getline(cin, this->huan_luyen_vien);
                     int n;
-                    cout<<"So luong cau thu:"; cin>> n;
-                    cauthu ct[30];
-                    for (int i=0; i<n;i++){
+                    // cout<<"So luong cau thu:"; cin>> n;
+                    // cauthu ct[30];
+                    // for (int i=0; i<n;i++){
                         
-                        ct[i].input();
-                    }
+                    //     ct[i].input();
+                    // }
+                    // for (int i=0; i<n;i++){
+                        
+                    //    ds_ct->hoten=ct[i].hoten;
+                    // }
                     
                     
                     
         }
         void output(){        
          
-        cout<<ten_doi<<"\t "<<dia_phuong<<"\t"<<huan_luyen_vien;
-        
-
-        cout<<ds_ct->hoten;
-   
+        cout<<setw(30)<<left <<ten_doi<<setw(30)<<left <<dia_phuong<<setw(30)<<left <<huan_luyen_vien<<"\n";
+    
 
         }
         friend void tim_kiem_ten_doi(doibong *db[], int  n);
