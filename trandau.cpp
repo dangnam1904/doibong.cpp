@@ -27,7 +27,7 @@ class trandau{
         void output(){
            
             
-            cout<< ngay_thi_dau<<"\t "<<san_thi_dau<<"\t"<<ten_hai_doi_bong<<"\t\t"<<ti_so<<"\n";
+            cout<<setw(30)<<left<<ngay_thi_dau<<setw(30)<<left<<san_thi_dau<<setw(30)<<left<<ten_hai_doi_bong<<setw(30)<<left<<ti_so<<"\n";
 
         }
         friend void tim_kiem_ngay_thi_dau(trandau *td[], int  n);
@@ -46,11 +46,12 @@ void tim_kiem_ngay_thi_dau(trandau *td[], int  n){
     int i;
     int find = 0;
     cout << "\nNhap ngay thi dau  doi can tim: "; fflush(stdin); getline(cin,ngay_dau);
+    cout<<setw(30)<<left<<"Ngay thi dau"<<setw(30)<<left<<"San thi dau"<<setw(30)<<left<<"Ten hai doi"<<setw(30)<<left<<"Ti so"<<"\n"; 
     for (i = 0; i < n; i++)
     {
         if (td[i]->ngay_thi_dau == ngay_dau)
         {
-            cout << "\nDa tim thay\n";
+          
             td[i]->output();
             find = 1;
         }
@@ -67,11 +68,12 @@ void tim_kiem_san_thi_dau(trandau *td[], int  n){
     int i;
     int find = 0;
     cout << "\nNhap san dau can tim: "; fflush(stdin); getline(cin,san_dau);
+    cout<<setw(30)<<left<<"Ngay thi dau"<<setw(30)<<left<<"San thi dau"<<setw(30)<<left<<"Ten hai doi"<<setw(30)<<left<<"Ti so"<<"\n"; 
     for (i = 0; i < n; i++)
     {
         if (td[i]->san_thi_dau == san_dau)
         {
-            cout << "\nDa tim thay\n";
+          
             td[i]->output();
             find = 1;
         }
@@ -87,11 +89,12 @@ void tim_kiem_ten_hai_doi_bong(trandau *td[], int  n){
     int i;
     int find = 0;
     cout << "\nNhap san dau can tim: "; fflush(stdin); getline(cin,ten2doi);
+    cout<<setw(30)<<left<<"Ngay thi dau"<<setw(30)<<left<<"San thi dau"<<setw(30)<<left<<"Ten hai doi"<<setw(30)<<left<<"Ti so"<<"\n"; 
     for (i = 0; i < n; i++)
     {
         if (td[i]->ten_hai_doi_bong == ten2doi)
         {
-            cout << "\nDa tim thay\n";
+          
             td[i]->output();
             find = 1;
         }
@@ -108,6 +111,7 @@ void  sua_thong_tin_tran_dau(trandau *td[], int  n){
     int find = 0;
     cout << "\nNhap ten 2 doi can tim: "; fflush(stdin); getline(cin,tendoi);
     cout << "\nNhap ngay dau doi can tim: "; fflush(stdin); getline(cin,tendoi);
+    
     for (int i = 0; i < n; i++)
     {
         if (td[i]->ten_hai_doi_bong == tendoi  && td[i]->ngay_thi_dau==ngay_dau)
@@ -132,6 +136,7 @@ void sort_ngay_thi_dau(trandau *td[], int  n){
             }
         }
     }
+    cout<<setw(30)<<left<<"Ngay thi dau"<<setw(30)<<left<<"San thi dau"<<setw(30)<<left<<"Ten hai doi"<<setw(30)<<left<<"Ti so"<<"\n"; 
     for(int i=0;i<n;i++){
         td[i]->output();
     }
@@ -145,6 +150,7 @@ void sort_san_thi_dau(trandau *td[], int  n){
             }
         }
     }
+    cout<<setw(30)<<left<<"Ngay thi dau"<<setw(30)<<left<<"San thi dau"<<setw(30)<<left<<"Ten hai doi"<<setw(30)<<left<<"Ti so"<<"\n"; 
     for(int i=0;i<n;i++){
         td[i]->output();
     } 

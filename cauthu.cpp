@@ -76,11 +76,13 @@ void tim_kiem_ten(cauthu *ct[], int n){
     int i;
     int find = 0;
     cout << "\nNhap ten can tim: "; fflush(stdin); getline(cin,ht);
+    cout<<setw(30)<<left<<"Ho ten"<<setw(30)<<left<<"Ngay sinh"<<setw(30)<<
+    left<<"CMND"<<setw(30)<<left<<"Quoc tich" <<setw(15)<<left<<"Vi tri dau"<<setw(15)<<left<<"Chieu cao "<<setw(10)<<left<<"Can nang"<<endl;
     for (i = 0; i < n; i++)
     {
         if (ct[i]->hoten == ht)
         {
-            cout << "\nDa tim thay\n";
+            
             ct[i]->output();
             find = 1;
         }
@@ -97,11 +99,13 @@ void tim_kiem_ten_vs_qtich(cauthu *ct[], int  n){
     int find = 0;
     cout << "\nNhap ten can tim: "; fflush(stdin); getline(cin,ht);
     cout << "\nNhap quoc tich can tim: "; fflush(stdin); getline(cin,q_tich);
+    cout<<setw(30)<<left<<"Ho ten"<<setw(30)<<left<<"Ngay sinh"<<setw(30)<<
+    left<<"CMND"<<setw(30)<<left<<"Quoc tich" <<setw(15)<<left<<"Vi tri dau"<<setw(15)<<left<<"Chieu cao "<<setw(10)<<left<<"Can nang"<<endl;
     for (  int i = 0; i < n; i++)
     {
         if (ct[i]->hoten == ht && ct[i]->quoctich==q_tich)
         {
-            cout << "\nDa tim thay\n";
+          
             ct[i]->output();
             find = 1;
         }
@@ -117,11 +121,13 @@ void tim_kiem_cmnd(cauthu *ct[], int n){
     int i;
     int find = 0;
     cout << "\nNhap so cmnd can tim: "; fflush(stdin); getline(cin,cm);
+    cout<<setw(30)<<left<<"Ho ten"<<setw(30)<<left<<"Ngay sinh"<<setw(30)<<
+    left<<"CMND"<<setw(30)<<left<<"Quoc tich" <<setw(15)<<left<<"Vi tri dau"<<setw(15)<<left<<"Chieu cao "<<setw(10)<<left<<"Can nang"<<endl;
     for (i = 0; i < n; i++)
     {
         if (ct[i]->cmnd == cm)
         {
-            cout << "\nDa tim thay\n";
+           
             ct[i]->output();
             find = 1;
         }
@@ -188,6 +194,8 @@ void sort_cthu(cauthu *ct[], int  n){
             }
         }
     }
+    cout<<setw(30)<<left<<"Ho ten"<<setw(30)<<left<<"Ngay sinh"<<setw(30)<<
+    left<<"CMND"<<setw(30)<<left<<"Quoc tich" <<setw(15)<<left<<"Vi tri dau"<<setw(15)<<left<<"Chieu cao "<<setw(10)<<left<<"Can nang"<<endl;
     for(int i=0;i<n;i++){
         ct[i]->output();
     }
@@ -201,6 +209,8 @@ void sort_cthu_chieucao(cauthu *ct[], int  n){
             }
         }
     }
+    cout<<setw(30)<<left<<"Ho ten"<<setw(30)<<left<<"Ngay sinh"<<setw(30)<<
+    left<<"CMND"<<setw(30)<<left<<"Quoc tich" <<setw(15)<<left<<"Vi tri dau"<<setw(15)<<left<<"Chieu cao "<<setw(10)<<left<<"Can nang"<<endl;
     for(int i=0;i<n;i++){
         ct[i]->output();
     }
@@ -214,6 +224,8 @@ void sort_cthu_can_nang(cauthu *ct[], int  n){
             }
         }
     }
+    cout<<setw(30)<<left<<"Ho ten"<<setw(30)<<left<<"Ngay sinh"<<setw(30)<<
+    left<<"CMND"<<setw(30)<<left<<"Quoc tich" <<setw(15)<<left<<"Vi tri dau"<<setw(15)<<left<<"Chieu cao "<<setw(10)<<left<<"Can nang"<<endl;
     for(int i=0;i<n;i++){
         ct[i]->output();
     }

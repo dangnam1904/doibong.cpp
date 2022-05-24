@@ -21,9 +21,9 @@ class doibong:public cauthu{
             this->ten_doi="";
             ds_ct= new cauthu();
         }
-        ~doibong(){
-            delete ds_ct;
-        }
+        // ~doibong(){
+        //     delete ds_ct;
+        // }
         void input(){
                     cout<<" Ten doi: ";
                     fflush(stdin);
@@ -71,11 +71,12 @@ void tim_kiem_ten_doi(doibong *db[], int  n){
     int i;
     int find = 0;
     cout << "\nNhap ten  doi can tim: "; fflush(stdin); getline(cin,tendoi);
+    cout<<setw(30)<<left<<"Ten doi"<<setw(30)<<left<<" Dia phuong "<<setw(30)<<left <<"Huan luyen vien"<<"\n"; 
     for (i = 0; i < n; i++)
     {
         if (db[i]->ten_doi == tendoi)
         {
-            cout << "\nDa tim thay\n";
+            
             db[i]->output();
             find = 1;
         }
@@ -90,11 +91,12 @@ void tim_kiem_huanluyenvien(doibong *db[], int  n){
     
     int find = 0;
     cout << "\nNhap ten HLV can tim: "; fflush(stdin); getline(cin,hlv);
+      cout<<setw(30)<<left<<"Ten doi"<<setw(30)<<left<<" Dia phuong "<<setw(30)<<left <<"Huan luyen vien"<<"\n"; 
     for (int i = 0; i < n; i++)
     {
         if (db[i]->huan_luyen_vien == hlv)
         {
-            cout << "\nDa tim thay\n";
+           
             db[i]->output();
             find = 1;
         }
@@ -110,6 +112,7 @@ void sua_thongtin_db(doibong *db[], int  n){
     
     int find = 0;
     cout << "\nNhap ten HLV can tim: "; fflush(stdin); getline(cin,tendoi);
+    cout<<setw(30)<<left<<"Ten doi"<<setw(30)<<left<<" Dia phuong "<<setw(30)<<left <<"Huan luyen vien"<<"\n"; 
     for (int i = 0; i < n; i++)
     {
         if (db[i]->ten_doi == tendoi)
@@ -162,6 +165,7 @@ void sort_doibong_HLV(doibong *db[], int  n){
             }
         }
     }
+      cout<<setw(30)<<left<<"Ten doi"<<setw(30)<<left<<" Dia phuong "<<setw(30)<<left <<"Huan luyen vien"<<"\n"; 
     for(int i=0;i<n;i++){
         db[i]->output();
     }
@@ -174,6 +178,7 @@ void sort_doibong_ten_dia_phuong(doibong *db[], int  n){
             }
         }
     }
+      cout<<setw(30)<<left<<"Ten doi"<<setw(30)<<left<<" Dia phuong "<<setw(30)<<left <<"Huan luyen vien"<<"\n"; 
     for(int i=0;i<n;i++){
         db[i]->output();
     }
@@ -187,6 +192,7 @@ void sort_doibong_ten_doi(doibong *db[], int  n){
             }
         }
     }
+      cout<<setw(30)<<left<<"Ten doi"<<setw(30)<<left<<" Dia phuong "<<setw(30)<<left <<"Huan luyen vien"<<"\n"; 
     for(int i=0;i<n;i++){
         db[i]->output();
     }
@@ -197,8 +203,10 @@ void tim_kiem_dia_phuong(doibong *db[], int  n){
     
     int find = 0;
     cout << "\nNhap ten dia phuong can tim: "; fflush(stdin); getline(cin,ten_dia_phuong);
+      cout<<setw(30)<<left<<"Ten doi"<<setw(30)<<left<<" Dia phuong "<<setw(30)<<left <<"Huan luyen vien"<<"\n"; 
     for (int i = 0; i < n; i++)
     {
+
         if (db[i]->dia_phuong == ten_dia_phuong)
         {
             

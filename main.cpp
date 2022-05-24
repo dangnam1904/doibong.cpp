@@ -71,6 +71,7 @@ void menu(cauthu *ct[], int n, doibong *db[], int m, trandau *td[],int k)
                        
                        cout<<"\n Lua chon: "; cin>>choice_2;
                        if(choice_2==1){
+                         
                          tim_kiem_ten(ct,n);
                          system("pause");
                        }
@@ -304,10 +305,10 @@ void menu(cauthu *ct[], int n, doibong *db[], int m, trandau *td[],int k)
                 }
                 else if( choice_1==2){
                   cout<<"\n-------------------------Danh sach tran dau---------------\n";
-                  cout<<"Ngay thi dau\tSan thi dau\tTen hai doi \t Ti so\n"; 
-                    for(int i=0; i<n; i++){
+                  cout<<setw(30)<<left<<"Ngay thi dau"<<setw(30)<<left<<"San thi dau"<<setw(30)<<left<<"Ten hai doi"<<setw(30)<<left<<"Ti so"<<"\n"; 
+                    for(int i=0; i<k; i++){
                     
-                      db[i]->output();
+                      td[i]->output();
                     }
                     system("pause");
                 }
