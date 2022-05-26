@@ -64,10 +64,26 @@ class cauthu{
    
 };
 void read_data(ifstream &filein,cauthu *ct[],int n){
+   int a;
+   filein>>a;
    string ht;
-    // for(int i=0; i<n;i++){
-    //     getline(filein,ct[i]->hoten,"\t");
-    // }
+  
+ 
+    for(int i=0; i<a;i++){
+        
+        ct[i]=new cauthu();
+        getline(filein,ct[i]->hoten,',');
+       getline(filein,ct[i]->cmnd,',');
+       getline(filein,ct[i]->ngaysinh,',');
+       getline(filein,ct[i]->quoctich,',');
+       getline(filein,ct[i]->vtri_dau,',');
+       filein>>ct[i]->cannang;
+       filein.ignore();
+       filein>>ct[i]->chieucao;
+       n++;
+       
+
+    }
    
 }
 

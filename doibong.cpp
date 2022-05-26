@@ -21,9 +21,9 @@ class doibong:public cauthu{
             this->ten_doi="";
             ds_ct= new cauthu();
         }
-        // ~doibong(){
-        //     delete ds_ct;
-        // }
+        ~doibong(){
+            delete ds_ct;
+        }
         void input(){
                     cout<<" Ten doi: ";
                     fflush(stdin);
@@ -35,16 +35,17 @@ class doibong:public cauthu{
                     fflush(stdin);
                     getline(cin, this->huan_luyen_vien);
                     int n;
-                    // cout<<"So luong cau thu:"; cin>> n;
-                    // cauthu ct[30];
-                    // for (int i=0; i<n;i++){
+                    cout<<"So luong cau thu:"; cin>> n;
+                    cauthu ct[30];
+                    for (int i=0; i<n;i++){
                         
-                    //     ct[i].input();
-                    // }
-                    // for (int i=0; i<n;i++){
+                        ct[i].input();
+                    }
+                    for (int i=0; i<n;i++){
                         
-                    //    ds_ct->hoten=ct[i].hoten;
-                    // }
+                       ds_ct->hoten=ct[i].hoten;
+                       ds_ct->cmnd=ct[i].cmnd;
+                    }
                     
                     
                     
@@ -52,6 +53,8 @@ class doibong:public cauthu{
         void output(){        
          
         cout<<setw(30)<<left <<ten_doi<<setw(30)<<left <<dia_phuong<<setw(30)<<left <<huan_luyen_vien<<"\n";
+        cout<<"Danh sach cau thu"<<endl;
+        cout<<ds_ct->hoten<<ds_ct->cmnd;
     
 
         }

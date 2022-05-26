@@ -2,6 +2,7 @@
 #include "doibong.cpp"
 #include "trandau.cpp"
 #include <iomanip>
+#include<fstream>
 using namespace std;
 
 void menu(cauthu *ct[], int n, doibong *db[], int m, trandau *td[],int k)
@@ -126,7 +127,17 @@ void menu(cauthu *ct[], int n, doibong *db[], int m, trandau *td[],int k)
                   }
                 }
                 else if(choice_1==6){
-
+                  ifstream FileIn;
+	                FileIn.open("C:\\code\\c++\\BongDa\\cauthu.txt", ios_base::in);
+                  if(!FileIn){
+                  cout << "Error: file not opened." << endl;
+                  
+                  }
+                  else{
+                    cout << "Succes" << endl;
+                  }
+                  read_data(FileIn,ct,n);
+                  FileIn.close();
                   system("pause");
                 }
                 
@@ -185,6 +196,7 @@ void menu(cauthu *ct[], int n, doibong *db[], int m, trandau *td[],int k)
                       db[i]->output();
                     }
                     system("pause");
+                    
                 }
                 else if(choice_1==3){
 
@@ -408,7 +420,9 @@ int main(){
   cauthu *ct[100];
   doibong *db[100];
   trandau *td[100];
-  int n,m,k;
+  int n=0;
+  int m=0;
+  int k=0;
   menu(ct,n,db,m,td,k);
   return 0;
 }
