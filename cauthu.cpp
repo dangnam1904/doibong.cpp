@@ -69,27 +69,41 @@ class cauthu{
         friend void sort_cthu(cauthu *ct[], int  n);
         friend void sort_cthu_chieucao(cauthu *ct[], int  n);
         friend void sort_cthu_can_nang(cauthu *ct[], int  n);
-        friend void read_data(ifstream &filein,cauthu *ct[],int n);
+        friend void read_data_cauthu(ifstream &filein,cauthu *ct[],int &n);
    
 };
-void read_data(ifstream &filein,cauthu *ct[],int n){
-   n=0;
-   int a;
-   filein>>a;
-   string ht;
+void read_data_cauthu(ifstream &filein,cauthu *ct[], int &n){
   
- 
-    for(int i=0; i<a;i++){
-        
-        ct[i]=new cauthu();
-        getline(filein,ct[i]->hoten,',');
+//    int a;
+//    filein>>n;
+//   filein.ignore(); //bỏ qua \n
+//    //n=a;
+   
+//     for(int i=0; i<n;i++){
+//         ct[i]= new cauthu();
+//        getline(filein,ct[i]->hoten,',');
+//        getline(filein,ct[i]->cmnd,',');
+//        getline(filein,ct[i]->ngaysinh,',');
+//        getline(filein,ct[i]->quoctich,',');
+//        getline(filein,ct[i]->vtri_dau,',');
+//        filein>>ct[i]->cannang;
+//        filein.ignore(); // bỏ dau ,
+//        filein>>ct[i]->chieucao;
+//        filein.ignore(); //xuong dòng
+//     }
+     int i=0;
+    while (filein.eof()==false){
+        ct[i]= new cauthu();
+       getline(filein,ct[i]->hoten,',');
        getline(filein,ct[i]->cmnd,',');
        getline(filein,ct[i]->ngaysinh,',');
        getline(filein,ct[i]->quoctich,',');
        getline(filein,ct[i]->vtri_dau,',');
        filein>>ct[i]->cannang;
-       filein.ignore();
+       filein.ignore(); // bỏ dau ,
        filein>>ct[i]->chieucao;
+       filein.ignore(); //xuong dòng
+       i++;
        n++;
     }
    

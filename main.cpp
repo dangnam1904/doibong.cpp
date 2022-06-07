@@ -5,7 +5,7 @@
 #include<fstream>
 using namespace std;
 
-void menu(cauthu *ct[], int n, doibong *db[], int m, trandau *td[],int k)
+void menu(cauthu *ct[], int &n, doibong *db[], int &m, trandau *td[],int &k)
 {
 
   int choice;
@@ -136,10 +136,12 @@ void menu(cauthu *ct[], int n, doibong *db[], int m, trandau *td[],int k)
                   }
                   else{
                     cout << "Succes" << endl;
-                    read_data(FileIn,ct,n);
+
+                    read_data_cauthu(FileIn,ct,n);
                     FileIn.close();
                   }
                   
+
                   system("pause");
                 }
                 
@@ -269,8 +271,22 @@ void menu(cauthu *ct[], int n, doibong *db[], int m, trandau *td[],int k)
                   }
                 }
                 else if(choice_1==6){
+                  
+                  ifstream FileIn;
+	                FileIn.open("C:\\Code\\C++\\doibong.cpp\\doibong.txt", ios_base::in);
+                  if(!FileIn)
+                  {
+                  cout << "Error: file not opened." << endl;
+                  
+                  }
+                  else{
+                    cout << "Succes" << endl;
 
+                   read_data_doibong(FileIn,db,m);
+                    FileIn.close();
+                  }
                   system("pause");
+                  
                 }
                 
                 else if(choice_1==7){

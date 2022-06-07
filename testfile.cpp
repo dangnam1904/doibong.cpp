@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
                     ifstream FileIn;
-	            FileIn.open("C:\\code\\c++\\BongDa\\cauthu.txt", ios_base::in);
+	            FileIn.open("C:\\Code\\C++\\doibong.cpp\\cauthu.txt", ios_base::in);
                   if(!FileIn){
                   cout << "Error: file not opened." << endl;
                   
