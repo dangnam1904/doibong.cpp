@@ -11,7 +11,8 @@ class doibong:public cauthu{
         string ten_doi;
         string dia_phuong;
         string huan_luyen_vien;
-        cauthu * ds_ct;
+        cauthu ** ds_ct;
+        int max_ct;
 
     public:
 
@@ -19,7 +20,8 @@ class doibong:public cauthu{
             this->dia_phuong="";
             this->huan_luyen_vien="";
             this->ten_doi="";
-            ds_ct= new cauthu();
+            this->max_ct=0;
+            ds_ct= new cauthu*();
         }
         ~doibong(){
             delete ds_ct;
@@ -34,28 +36,23 @@ class doibong:public cauthu{
                     cout<<" Huan luyen vien: ";
                     fflush(stdin);
                     getline(cin, this->huan_luyen_vien);
-                    int n;
-                    cout<<"So luong cau thu:"; cin>> n;
-                    cauthu ct[30];
-                    for (int i=0; i<n;i++){
-                        
-                        ct[i].input();
-                    }
-                    for (int i=0; i<n;i++){
-                        
-                       ds_ct->hoten=ct[i].hoten;
-                       ds_ct->cmnd=ct[i].cmnd;
-                    }
                     
-                    
-                    
-        }
+                    cout<<"So luong cau thu:"; cin>>max_ct;
+                    for (int i=0; i<max_ct;i++){
+                        cauthu::input();
+                        ds_ct[i]=new cauthu(hoten,cmnd,ngaysinh,quoctich,vtri_dau,chieucao,cannang);
+                    }         
+                }
         void output(){        
-         
+        
         cout<<setw(30)<<left <<ten_doi<<setw(30)<<left <<dia_phuong<<setw(30)<<left <<huan_luyen_vien<<"\n";
-        cout<<"Danh sach cau thu"<<endl;
-        cout<<ds_ct->hoten<<ds_ct->cmnd;
-    
+        cout<<"========================Danh sach cau thu=================="<<endl;
+        cout<<setw(30)<<left<<"Ho ten"<<setw(30)<<left<<"Ngay sinh"<<setw(30)<<left<<"CMND"<<setw(30)<<left<<"Quoc tich" <<setw(15)<<left<<"Vi tri dau"<<setw(15)<<left<<"Chieu cao "<<setw(10)<<left<<"Can nang"<<endl;
+
+        for( int i=0; i<max_ct;i++){
+            ds_ct[i]->output();
+        }
+       
 
         }
         friend void tim_kiem_ten_doi(doibong *db[], int  n);

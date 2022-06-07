@@ -19,6 +19,15 @@ class cauthu{
             this-> chieucao=0;
             this-> cannang=0;
         }
+           cauthu(string hoten, string cmnd, string ngaysinh,string quoctich,string vtri_dau, double chieucao, double cannang){
+            this->hoten=hoten;
+            this->cmnd=cmnd;
+            this->ngaysinh=ngaysinh;
+            this->quoctich=quoctich;
+            this-> vtri_dau=vtri_dau;
+            this-> chieucao=chieucao;
+            this-> cannang=cannang;
+        }
         
         /// hàm nhạp dữ liệu
        
@@ -64,6 +73,7 @@ class cauthu{
    
 };
 void read_data(ifstream &filein,cauthu *ct[],int n){
+   n=0;
    int a;
    filein>>a;
    string ht;
@@ -81,8 +91,6 @@ void read_data(ifstream &filein,cauthu *ct[],int n){
        filein.ignore();
        filein>>ct[i]->chieucao;
        n++;
-       
-
     }
    
 }

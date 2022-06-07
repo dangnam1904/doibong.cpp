@@ -128,16 +128,18 @@ void menu(cauthu *ct[], int n, doibong *db[], int m, trandau *td[],int k)
                 }
                 else if(choice_1==6){
                   ifstream FileIn;
-	                FileIn.open("C:\\code\\c++\\BongDa\\cauthu.txt", ios_base::in);
-                  if(!FileIn){
+	                FileIn.open("C:\\Code\\C++\\doibong.cpp\\cauthu.txt", ios_base::in);
+                  if(!FileIn)
+                  {
                   cout << "Error: file not opened." << endl;
                   
                   }
                   else{
                     cout << "Succes" << endl;
+                    read_data(FileIn,ct,n);
+                    FileIn.close();
                   }
-                  read_data(FileIn,ct,n);
-                  FileIn.close();
+                  
                   system("pause");
                 }
                 
@@ -190,9 +192,10 @@ void menu(cauthu *ct[], int n, doibong *db[], int m, trandau *td[],int k)
                 }
                 else if( choice_1==2){
                   cout<<"\n-------------------------Danh sach doi bong---------------\n";
-                  cout<<setw(30)<<left<<"Ten doi"<<setw(30)<<left<<" Dia phuong "<<setw(30)<<left <<"Huan luyen vien"<<"\n"; 
+                  //cout<<setw(30)<<left<<"Ten doi"<<setw(30)<<left<<" Dia phuong "<<setw(30)<<left <<"Huan luyen vien"<<"\n"; 
                     for(int i=0; i<m; i++){
-                    
+                      cout<<setw(30)<<left<<"Ten doi"<<setw(30)<<left<<" Dia phuong "<<setw(30)<<left <<"Huan luyen vien"<<"\n"; 
+
                       db[i]->output();
                     }
                     system("pause");
