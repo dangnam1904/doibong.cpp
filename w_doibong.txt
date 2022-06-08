@@ -1,0 +1,8 @@
+Doi1 ,VietNam,Hoang A
+2
+Hoang,175757575,11/11/1997,VietNam,180,75
+Hoang ,12332,11/01/1993,lO,168,68
+Doi2,Lao,Laong
+2
+Hoang,175757575,11/11/1997,VietNam,180,75
+Hoang ,12332,11/01/1993,lO,168,68

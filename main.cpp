@@ -313,7 +313,31 @@ void menu(cauthu *ct[], int &n, doibong *db[], int &m, trandau *td[],int &k)
                 }
                 
                 else if(choice_1==7){
+                  ofstream fileout;
+                  while (true){
+                      int choice_3;
+                        system("cls");
+                        cout << "\t---------------GHI DU LIEU---------------";
+                        cout << "\n\t1. GHI DE";
+                        cout << "\n\t2. THEM CUOI FILE";
+                         cout << "\n\t0. THOAT";
+                       cout<<"\n Lua chon: "; cin>>choice_3;
+                       if( choice_3==1){
+                          fileout.open("C:\\Code\\C++\\doibong.cpp\\w_doibong.txt", ios_base::out);
                   
+                          write_data_doibong(fileout,db,m);
+                          fileout.close();
+                       }
+                       else if(choice_3==2){
+                          fileout.open("C:\\Code\\C++\\doibong.cpp\\w_doibong.txt", ios_base::app);
+                  
+                          write_data_cauthu_cuoifile(fileout,td,n);
+                          fileout.close();
+                       }
+                       else if(choice_3==0){
+                         break;
+                       }
+                   }
                   system("pause");
                 }
                  else if(choice_1==8){
@@ -461,13 +485,13 @@ void menu(cauthu *ct[], int &n, doibong *db[], int &m, trandau *td[],int &k)
                        if( choice_3==1){
                           fileout.open("C:\\Code\\C++\\doibong.cpp\\w_trandau.txt", ios_base::out);
                   
-                          write_data_trandau(fileout,td,n);
+                          write_data_trandau(fileout,td,k);
                           fileout.close();
                        }
                        else if(choice_3==2){
                           fileout.open("C:\\Code\\C++\\doibong.cpp\\w_trandau.txt", ios_base::app);
                   
-                          write_data_cauthu_cuoifile(fileout,td,n);
+                          write_data_cauthu_cuoifile(fileout,td,k);
                           fileout.close();
                        }
                        else if(choice_3==0){

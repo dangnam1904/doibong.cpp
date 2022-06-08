@@ -67,6 +67,20 @@ class doibong:public cauthu{
        friend void write_data_doibong(ofstream &fileout,doibong *db[],int &m);
         friend void write_data_cauthu_cuoifile(ofstream &fileout,doibong *db[],int &m);
 };
+
+void write_data_doibong(ofstream &fileout,doibong *db[],int &m)
+{
+    for(int i=0;i<m;i++){
+        fileout<<db[i]->ten_doi<<","<<db[i]->dia_phuong<<","<<db[i]->huan_luyen_vien<<"\n";
+        fileout<<db[i]->max_ct;
+        fileout<<"\n";
+        for (int j=0; j<db[i]->max_ct;j++){
+            //Tien Giang,187675745,01/01/1990,VietNam,tiendao,175,75
+            fileout<<db[j]->hoten<<","<<db[j]->cmnd<<","<<db[j]->ngaysinh<<","<<db[j]->quoctich<<","<<db[j]->chieucao<<","<<db[j]->cannang<<endl;
+        }
+
+    }
+}
 void read_data_doibong(ifstream &filein,doibong *db[],int &m){
     
     int i=0;
@@ -78,20 +92,24 @@ void read_data_doibong(ifstream &filein,doibong *db[],int &m){
        //db[i]->ds_ct.hoten;
        //filein.ignore(); //xuong dòng
        filein>>db[i]->max_ct;
+       filein.ignore(); //xuong dòng
        cauthu ** ds_ct;
        int j=0;
        for( j=0; j<db[i]->max_ct; j++)
        {
-       ds_ct[j]= new cauthu();
-       getline(filein,ds_ct[j]->hoten,',');
-       getline(filein,ds_ct[j]->cmnd,',');
-       getline(filein,ds_ct[j]->ngaysinh,',');
-       getline(filein,ds_ct[j]->quoctich,',');
-       getline(filein,ds_ct[j]->vtri_dau,',');
-       filein>>ds_ct[j]->cannang;
+        string hoten,cmnd,ngaysinh,quoctich,vtri_dau;
+        double cannang,chieucao;
+      
+       getline(filein,hoten,',');
+       getline(filein,cmnd,',');
+       getline(filein,ngaysinh,',');
+       getline(filein,quoctich,',');
+       getline(filein,vtri_dau,',');
+       filein>>cannang;
        filein.ignore(); // bỏ dau ,
-       filein>>ds_ct[j]->chieucao;
+       filein>>chieucao;
        filein.ignore(); //xuong dòng
+       ds_ct[j]= new cauthu(hoten,cmnd,ngaysinh,quoctich,vtri_dau,chieucao,cannang);
        }
        
        i++;
