@@ -3,7 +3,17 @@ Doi 1,VietNam,HLV1
 Hoang Nam,187771234,19/04/2000,VietNam,tiendao,175,68
 Hoang An,187771445,19/01/1990,VietNam,tiendao,175,75
 Nam Giang,187771445,01/01/1990,VietNam,tiendao,175,75
-Doi 1,VietNam,HLV2
+Doi 1,Mi-An-Ma,HLV2
+3
+Nam,187771234,19/04/2000,VietNam,tiendao,175,68
+An,187771445,19/01/1990,VietNam,tiendao,175,75
+Giang,187771445,01/01/1990,VietNam,tiendao,175,75
+Doi 3,Thai Lan,HLV2
+3
+Nam,187771234,19/04/2000,VietNam,tiendao,175,68
+An,187771445,19/01/1990,VietNam,tiendao,175,75
+Giang,187771445,01/01/1990,VietNam,tiendao,175,75
+Doi 4,Singapo,HLV2
 3
 Nam,187771234,19/04/2000,VietNam,tiendao,175,68
 An,187771445,19/01/1990,VietNam,tiendao,175,75

@@ -43,9 +43,9 @@ void menu(cauthu *ct[], int &n, doibong *db[], int &m, trandau *td[],int &k)
                     
                     for(int i=0; i<a; i++){
                       cout<<"Cau thu so: "<<i+1<<"\n";
-                      ct[i]=new cauthu();
-                      
-                      ct[i]->input();
+                      cauthu *ct1= new cauthu();
+                      ct1->input();
+                      ct[n]= ct1;
                       n++;
                     }
                 }
@@ -186,9 +186,9 @@ void menu(cauthu *ct[], int &n, doibong *db[], int &m, trandau *td[],int &k)
                     
                     for(int i=0; i<a; i++){
                       cout<<"Doi bong so: "<<i+1<<"\n";
-                      db[i]=new doibong();
-                      
-                      db[i]->input();
+                      doibong *db1 = new doibong();
+                      db1->input();
+                      db[m]=db1;
                       m++;
                     }
                 }
@@ -328,9 +328,9 @@ void menu(cauthu *ct[], int &n, doibong *db[], int &m, trandau *td[],int &k)
                     
                     for(int i=0; i<a; i++){
                       cout<<"Doi bong so: "<<i+1<<"\n";
-                      td[i]=new trandau();
-                      
-                      td[i]->input();
+                     trandau *tr1 = new trandau();
+                      tr1->input();
+                      td[k]=tr1;
                       k++;
                     }
                 }
@@ -408,8 +408,21 @@ void menu(cauthu *ct[], int &n, doibong *db[], int &m, trandau *td[],int &k)
                   }
                 }
                 else if(choice_1==6){
+                  ifstream FileIn;
+	                FileIn.open("C:\\Code\\C++\\doibong.cpp\\trandau.txt", ios_base::in);
+                  if(!FileIn)
+                  {
+                  cout << "Error: file not opened." << endl;
+                  
+                  }
+                  else{
+                    cout << "Succes" << endl;
 
+                   read_data_trandau(FileIn,td,k);
+                    FileIn.close();
+                  }
                   system("pause");
+                 
                 }
                 
                 else if(choice_1==7){

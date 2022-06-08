@@ -77,21 +77,21 @@ void read_data_doibong(ifstream &filein,doibong *db[],int &m){
       
        //filein.ignore(); //xuong dòng
        filein>>db[i]->max_ct;
-       
+       cauthu ** ds_ct;
        int j=0;
-    //    for( j=0; j<db[i]->max_ct; j++)
-    //    {
-    //    cauthu ** ds_ct[] = new doibong();
-    //    getline(filein,ds_ct[j]->hoten,',');
-    //    getline(filein,ds_ct[j]->cmnd,',');
-    //    getline(filein,ds_ct[j]->ngaysinh,',');
-    //    getline(filein,ds_ct[j]->quoctich,',');
-    //    getline(filein,ds_ct[j]->vtri_dau,',');
-    //    filein>>ds_ct[j]->cannang;
-    //    filein.ignore(); // bỏ dau ,
-    //    filein>>ds_ct[j]->chieucao;
-    //    filein.ignore(); //xuong dòng
-    //    }
+       for( j=0; j<db[i]->max_ct; j++)
+       {
+       ds_ct[j]= new cauthu();
+       getline(filein,ds_ct[j]->hoten,',');
+       getline(filein,ds_ct[j]->cmnd,',');
+       getline(filein,ds_ct[j]->ngaysinh,',');
+       getline(filein,ds_ct[j]->quoctich,',');
+       getline(filein,ds_ct[j]->vtri_dau,',');
+       filein>>ds_ct[j]->cannang;
+       filein.ignore(); // bỏ dau ,
+       filein>>ds_ct[j]->chieucao;
+       filein.ignore(); //xuong dòng
+       }
        
        i++;
        m++;
