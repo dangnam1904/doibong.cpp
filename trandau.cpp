@@ -35,11 +35,12 @@ class trandau{
         friend void tim_kiem_san_thi_dau(trandau *td[], int  k);
         friend void tim_kiem_ten_hai_doi_bong(trandau *td[], int  k);
         friend void  sua_thong_tin_tran_dau(trandau *td[], int  k);
-        friend void xoa_trandau(trandau *td[], int  k);
+        friend void xoa_trandau(trandau *td[], int  &k);
         friend void sort_san_thi_dau(trandau *td[], int  k);
         friend void sort_ngay_thi_dau(trandau *td[], int  k);
         friend void read_data_trandau(ifstream &filein,trandau *td[],int &k);
-    
+        friend void write_data_trandau(ofstream &fileout,trandau *td[],int &k);
+        friend void write_data_cauthu_cuoifile(ofstream &fileout,trandau *td[],int &k);
     
 };
 
@@ -56,6 +57,27 @@ void read_data_trandau(ifstream &filein,trandau *td[],int &k){
     }
 }
 
+void write_data_trandau(ofstream &fileout,trandau *td[],int &k){
+    for( int i=0; i<k;i++){
+        if(k-i==1){
+        fileout<< td[i]->ngay_thi_dau<<","<<td[i]->san_thi_dau<<","<<td[i]->ten_hai_doi_bong<<","<<td[i]->ti_so;
+        }
+        else{
+        fileout<< td[i]->ngay_thi_dau<<","<<td[i]->san_thi_dau<<","<<td[i]->ten_hai_doi_bong<<","<<td[i]->ti_so<<endl;        }
+    }
+}
+
+
+void write_data_cauthu_cuoifile(ofstream &fileout,trandau *td[],int &k){
+     fileout<<"\n";
+     for( int i=0; i<k;i++){
+        if(k-i==1){
+        fileout<< td[i]->ngay_thi_dau<<","<<td[i]->san_thi_dau<<","<<td[i]->ten_hai_doi_bong<<","<<td[i]->ti_so;
+        }
+        else{
+        fileout<< td[i]->ngay_thi_dau<<","<<td[i]->san_thi_dau<<","<<td[i]->ten_hai_doi_bong<<","<<td[i]->ti_so<<endl;        }
+    }
+}
 void tim_kiem_ngay_thi_dau(trandau *td[], int  k){
     string ngay_dau;
     int i;
@@ -170,7 +192,7 @@ void sort_san_thi_dau(trandau *td[], int k){
         td[i]->output();
     } 
 }
-void xoa_trandau(trandau *td[], int  k){
+void xoa_trandau(trandau *td[], int  &k){
     string tendoi, ngay_dau;
     
     int find = 0;
@@ -199,5 +221,6 @@ void xoa_trandau(trandau *td[], int  k){
     {
         cout << "\nXoa khong thanh cong";
     }
+    k--;
 }
 

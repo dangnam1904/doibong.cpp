@@ -65,12 +65,13 @@ class cauthu{
         friend void tim_kiem_cmnd(cauthu *ct[], int  n);
         friend void tim_kiem_ten_vs_qtich(cauthu *ct[], int  n);
         friend void sua_thongtin_cthu(cauthu *ct[], int  n);
-        friend void xoa_cthu(cauthu *ct[], int  n);
+        friend void xoa_cthu(cauthu *ct[], int  &n);
         friend void sort_cthu(cauthu *ct[], int  n);
         friend void sort_cthu_chieucao(cauthu *ct[], int  n);
         friend void sort_cthu_can_nang(cauthu *ct[], int  n);
         friend void read_data_cauthu(ifstream &filein,cauthu *ct[],int &n);
-   
+        friend void write_data_cauthu(ofstream &fileout,cauthu *ct[],int &n);
+        friend void write_data_cauthu_cuoifile(ofstream &fileout,cauthu *ct[],int &n);
 };
 void read_data_cauthu(ifstream &filein,cauthu *ct[], int &n){
   
@@ -109,6 +110,28 @@ void read_data_cauthu(ifstream &filein,cauthu *ct[], int &n){
    
 }
 
+void write_data_cauthu(ofstream &fileout,cauthu *ct[],int &n){
+ for( int i=0; i<n;i++){
+        if(n-i==1){
+        fileout<< ct[i]->hoten<<","<<ct[i]->cmnd<<","<<ct[i]->ngaysinh<<","<<ct[i]->quoctich<<","<<ct[i]->chieucao<<","<<ct[i]->cannang;
+        }
+        else{
+            fileout<< ct[i]->hoten<<","<<ct[i]->cmnd<<","<<ct[i]->ngaysinh<<","<<ct[i]->quoctich<<","<<ct[i]->chieucao<<","<<ct[i]->cannang<<endl;
+        }
+ }
+}
+void write_data_cauthu_cuoifile(ofstream &fileout,cauthu *ct[],int &n){
+    fileout<<"\n";
+    for( int i=0; i<n;i++){
+        if(n-i==1){
+        fileout<< ct[i]->hoten<<","<<ct[i]->cmnd<<","<<ct[i]->ngaysinh<<","<<ct[i]->quoctich<<","<<ct[i]->chieucao<<","<<ct[i]->cannang;
+        }
+        else{
+            fileout<< ct[i]->hoten<<","<<ct[i]->cmnd<<","<<ct[i]->ngaysinh<<","<<ct[i]->quoctich<<","<<ct[i]->chieucao<<","<<ct[i]->cannang<<endl;
+        }
+ }
+}
+
 void tim_kiem_ten(cauthu *ct[], int n){
     string ht;
     int i;
@@ -117,7 +140,14 @@ void tim_kiem_ten(cauthu *ct[], int n){
     cout<<setw(30)<<left<<"Ho ten"<<setw(30)<<left<<"Ngay sinh"<<setw(30)<<
     left<<"CMND"<<setw(30)<<left<<"Quoc tich" <<setw(15)<<left<<"Vi tri dau"<<setw(15)<<left<<"Chieu cao "<<setw(10)<<left<<"Can nang"<<endl;
     for (i = 0; i < n; i++)
-    {
+    {   
+        // kiểm tra không phân biêt hoa thường
+        // if (stricmp(ct[i]->hoten.c_str(), ht.c_str()) == 0)
+		// {
+        //     ct[i]->output();
+        //     find = 1;
+        // }
+
         if (ct[i]->hoten == ht)
         {
             
@@ -195,7 +225,7 @@ void sua_thongtin_cthu(cauthu *ct[], int n){
         cout << "\nKhong tim thay !";
     }
 }
-void xoa_cthu(cauthu *ct[], int n){
+void xoa_cthu(cauthu *ct[], int &n){
     string cm;
     int i;
     int find = 0;
@@ -222,6 +252,7 @@ void xoa_cthu(cauthu *ct[], int n){
     {
         cout << "\nXoa khong thanh cong";
     }
+    n--;
 }
 
 void sort_cthu(cauthu *ct[], int  n){

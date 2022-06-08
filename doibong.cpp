@@ -59,12 +59,13 @@ class doibong:public cauthu{
         friend void tim_kiem_huanluyenvien(doibong *db[], int  m);
         friend void tim_kiem_dia_phuong(doibong *db[], int  m);
         friend void sua_thongtin_db(doibong *db[], int  m);
-        friend void xoa_doibong(doibong *db[], int  m);
+        friend void xoa_doibong(doibong *db[], int  &m);
         friend void sort_doibong_ten_doi(doibong *db[], int  m);
         friend void sort_doibong_ten_dia_phuong(doibong *db[], int  m);
         friend void sort_doibong_HLV(doibong *db[], int  m);
         friend void read_data_doibong(ifstream &filein,doibong *db[],int &m);
-       
+       friend void write_data_doibong(ofstream &fileout,doibong *db[],int &m);
+        friend void write_data_cauthu_cuoifile(ofstream &fileout,doibong *db[],int &m);
 };
 void read_data_doibong(ifstream &filein,doibong *db[],int &m){
     
@@ -161,7 +162,7 @@ void sua_thongtin_db(doibong *db[], int  m){
     }
 }
 
-void xoa_doibong(doibong *db[], int  m){
+void xoa_doibong(doibong *db[], int  &m){
     string ten_doi_bong;
     int i;
     int find = 0;
@@ -188,6 +189,7 @@ void xoa_doibong(doibong *db[], int  m){
     {
         cout << "\nXoa khong thanh cong";
     }
+    m--;
 }
 
 void sort_doibong_HLV(doibong *db[], int m){
