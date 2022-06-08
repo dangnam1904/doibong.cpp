@@ -75,7 +75,7 @@ void read_data_doibong(ifstream &filein,doibong *db[],int &m){
        getline(filein,db[i]->ten_doi,',');
        getline(filein,db[i]->dia_phuong,',');
        getline(filein,db[i]->huan_luyen_vien,'\n');
-      
+       //db[i]->ds_ct.hoten;
        //filein.ignore(); //xuong dòng
        filein>>db[i]->max_ct;
        cauthu ** ds_ct;
